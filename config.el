@@ -154,7 +154,13 @@
 
 (after! dirvish
    (setq dirvish-hide-details t)
-   (setq dirvish-attributes '(vc-state subtree-state all-the-icons collapse git-msg file-size))
+   (setq dirvish-attributes '(git-msg
+                              vc-state
+                              expanded-state
+                              file-size
+                              all-the-icons
+                              symlink-target
+                              hl-line))
    (dirvish-peek-mode))
 
 (after! (dirvish projectile)
