@@ -105,7 +105,7 @@
 (after! company
   (require 'company-box)
   (add-hook! company-mode (company-box-mode))
-  (setq company-idle-delay 0))
+  (setq company-idle-delay 0.2))
 
 ;; SQL Mode
 
