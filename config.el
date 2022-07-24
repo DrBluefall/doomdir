@@ -188,6 +188,12 @@
            #'visual-fill-column-mode
            #'visual-line-mode))
 
+;; Info
+
+(add-hook! 'Info-mode-hook
+  (setq-local visual-fill-column-width 80)
+  (visual-fill-column-mode 1))
+
 ;;=============;;
 ;; KEYBINDINGS ;;
 ;;=============;;
