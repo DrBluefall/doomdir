@@ -138,41 +138,6 @@
 (add-to-list '+format-on-save-enabled-modes 'autoconf-mode)
 (add-to-list '+format-on-save-enabled-modes 'makefile-automake-mode)
 
-;; Dirvish
-
-; NOTE: Right now, DOOM's version of Dirvish is a bit borked. Currently, this
-; requires doomemacs/doomemacs#6568 to be merged locally. It's a bit of a hack,
-; and it has to be redone after every 'doom upgrade' until either A) I advise
-; `doom/upgrade', probably with some Magit-based tomfuckery, or B) the PR is
-; merged.
-;
-; Luckily, there's a way to pull PRs as branches: 'git fetch origin
-; pull/$PR_ID/head:$BRANCHNAME'
-;
-; I'll have to figure out the correct analogue for magit, but hopefully it
-; shouldn't be too hard. (...famous last words)
-
-(after! dirvish
-   (setq dirvish-hide-details t)
-   (setq dirvish-attributes '(git-msg
-                              vc-state
-                              expanded-state
-                              file-size
-                              all-the-icons
-                              symlink-target
-                              hl-line))
-   (dirvish-peek-mode))
-
-(after! (dirvish projectile)
-
-  (defadvice! +prisco/projectile-dirvish ()
-    "Run `dirvish' in a Projectile project's root."
-    :override #'projectile-dired
-    (interactive)
-    (dirvish (projectile-acquire-root)))
-
-  (setq +workspaces-switch-project-function (lambda (_) (projectile-dired))))
-
 ;; Org Mode
 
 (after! org
@@ -210,10 +175,6 @@
 (map! :leader "." (cmd! (if (projectile-project-p)
                             (projectile-find-file)
                           (helm-find-files nil))))
-(after! dirvish
-  (map! :map dirvish-mode-map
-      :en "q" #'dirvish-quit
-      :en "TAB" #'dirvish-subtree-toggle))
 
 ;; Compilation
 
