@@ -66,7 +66,7 @@
 ;; EMail
 
 (add-hook! mu4e-main-mode :append
-           (setq-local visual-fill-column-width 64
+           (setq-local visual-fill-column-width 66
                        visual-fill-column-center-text t)
            (visual-fill-column-mode 1))
 
@@ -85,15 +85,15 @@
         message-send-mail-function #'message-send-mail-with-sendmail)
 
   (set-email-account! "sbisonol@gmail.com"
-                      '((mu4e-sent-folder .   "/gmail/sbisonol/[Gmail]/Sent Mail")
-                        (mu4e-refile-folder . "/gmail/sbisonol/[Gmail]/All Mail")
-                        (mu4e-trash-folder .  "/gmail/sbisonol/[Gmail]/Trash")
-                        (mu4e-refile-folder . "/gmail/sbisonol/Archives")
+                      '((mu4e-sent-folder .   "/[Gmail]/Sent Mail")
+                        (mu4e-refile-folder . "/[Gmail]/All Mail")
+                        (mu4e-trash-folder .  "/[Gmail]/Trash")
+                        (mu4e-refile-folder . "/Archives")
                         (smtpmail-smtp-server . "smtp.gmail.com")
                         (smtpmail-smtp-service . 587)
                         (smtpmail-smtp-user . "sbisonol@gmail.com")))
 
-  (require 'mu4e-utils)
+  (require 'mu4e-bookmarks)
   (mu4e-bookmark-define "list:autoconf.gnu.org" "GNU Autoconf mailing list" ?a)
   (mu4e-bookmark-define "list:systemd-devel.lists.freedesktop.org" "systemd-devel mailing list" ?s)
   (mu4e-bookmark-define "list:emacs-orgmode.gnu.org" "Emacs org-mode mailing list" ?o)
