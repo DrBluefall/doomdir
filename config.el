@@ -159,6 +159,15 @@
   (setq-local visual-fill-column-width 80)
   (visual-fill-column-mode 1))
 
+;; GTK+ Blueprints
+
+(after! (lsp-mode blueprint-mode)
+  (require 'lsp-blueprint)
+  (add-to-list 'safe-local-variable-values
+               '(lsp-blueprint-compiler-executable
+                 .
+                 "~/Projects/C++/broadcast/subprojects/blueprint-compiler/blueprint-compiler.py")))
+
 ;;=============;;
 ;; KEYBINDINGS ;;
 ;;=============;;
