@@ -144,14 +144,14 @@
   (setq org-agenda-span 7
         org-agenda-start-on-weekday 0
         org-roam-v2-ack t
-        org-agenda-files '("~/org/primary_agenda.org")
+        org-agenda-files '("~/org/todo.org" "~/org/journal.org")
         org-log-done 'time
         visual-fill-column-width 100
         visual-fill-column-center-text t)
 
-(add-hook! 'org-mode-hook
-           #'visual-fill-column-mode
-           #'visual-line-mode))
+  (add-hook! 'org-mode-hook
+             #'visual-fill-column-mode
+             #'visual-line-mode))
 
 ;; Info
 
