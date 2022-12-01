@@ -18,7 +18,7 @@
 
 (setq display-line-numbers-type nil)
 
-(setq fancy-splash-image (concat (file-name-as-directory doom-private-dir) "pc_gear_v3_smol.png"))
+(setq fancy-splash-image (concat (file-name-as-directory doom-user-dir) "pc_gear_v3_smol.png"))
 
 ;;====================;;
 ;; MISC CONFIGURATION ;;
@@ -168,6 +168,17 @@
                  .
                  "~/Projects/C++/broadcast/subprojects/blueprint-compiler/blueprint-compiler.py")))
 
+;; IRC
+
+(after! circe
+  (set-irc-server! "irc.libera.chat"
+    `(:tls t
+      :port 6697
+      :nick "drbluefall"
+      :sasl-username "drbluefall"
+      :sasl-password ,(+pass-get-secret "libera.chat/drbluefall")
+      :channels ("#lispcafe" "#emacs" "#common-lisp"))))
+
 ;;=============;;
 ;; KEYBINDINGS ;;
 ;;=============;;
@@ -213,7 +224,7 @@
 ; gate is probably for the best.
 
 (map!
- (:when (featurep! :lang common-lisp)
+ (:when (modulep! :lang common-lisp)
   (:map sly-mrepl-mode-map
    :i "<up>" #'sly-mrepl-previous-input-or-button
    :i "<down>" #'sly-mrepl-next-input-or-button)))

@@ -76,7 +76,7 @@
        ;;ansible
        ;;(debugger +lsp)         ; FIXME stepping through code, to help you add bugs
        ;;direnv
-       ;;docker
+       docker
        ;;editorconfig      ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
@@ -102,7 +102,7 @@
        ;;agda              ; types of types of types of types...
        (cc +lsp)                ; C/C++/Obj-C madness
        ;;clojure           ; java with a lisp
-       ;;common-lisp       ; if you've seen one lisp, you've seen them all
+       common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
        ;;csharp            ; unity, .NET, and mono shenanigans
@@ -122,7 +122,7 @@
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ; a language you can depend on
        json              ; At least it ain't XML
-       (java +meghanada) ; the poster child for carpal tunnel syndrome
+       (java +lsp) ; the poster child for carpal tunnel syndrome
        (javascript +lsp)        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;(kotlin +lsp)            ; a better, slicker Java(Script)
@@ -155,7 +155,7 @@
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        web               ; the tubes
-       ;;yaml              ; JSON, for people that hate themselves. (FTFY - Dr. Bluefall)
+       yaml              ; JSON, for people that hate themselves. (FTFY - Dr. Bluefall)
 
        :email
        (mu4e +gmail +org)
@@ -164,8 +164,8 @@
 
        :app
        calendar
-       ;;irc               ; how neckbeards socialize
-       (rss)        ; emacs as an RSS reader
+       irc               ; how neckbeards socialize
+       (rss +org)        ; emacs as an RSS reader
        ;;twitter           ; twitter client https://twitter.com/vnought
 
        :config
